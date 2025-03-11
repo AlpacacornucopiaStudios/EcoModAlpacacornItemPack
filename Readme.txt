@@ -8,6 +8,10 @@ Let me know on mod.io if you have any further plushie requests or balancing sugg
 
 All models are original & made in Blender with textures created using Adobe Substance Painter. No AI was used in the creation of this item pack.
 
+Update 1.0.4 2025, March 10
+Added Plushie Elephant
+Added Pink Plushie Elephant
+
 Update 1.0.3 2025, March 9
 Added Plushie Hedgehog
 Renamed Mesh_Crown to Mesh_PlushieCrown
