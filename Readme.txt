@@ -1,4 +1,4 @@
-Last updated March 9, 2025 for Eco 0.11.1.10 beta release-847
+Last updated March 10, 2025 for Eco 0.11.1.10 beta release-847
 
 To install, just place the mod folder AlpacacornItemPack in your server's Mods -> UserCode folder and restart your server.
 
@@ -8,9 +8,12 @@ Let me know on mod.io if you have any further plushie requests or balancing sugg
 
 All models are original & made in Blender with textures created using Adobe Substance Painter. No AI was used in the creation of this item pack.
 
+Update 1.0.5 2025, March 10
+Updated Plushie Pink Elephant recipe ingredients to include more colored powders.
+
 Update 1.0.4 2025, March 10
 Added Plushie Elephant
-Added Pink Plushie Elephant
+Added Plushie Pink Elephant
 
 Update 1.0.3 2025, March 9
 Added Plushie Hedgehog
