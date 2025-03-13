@@ -44,7 +44,6 @@
     using Eco.Simulation.WorldLayers;
   
 
-    //edit to test sync
     //Object////////////////////////////////////////////////////////////////
 
     [Serialized]
