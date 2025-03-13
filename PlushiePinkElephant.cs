@@ -1,4 +1,4 @@
-namespace Eco.Mods.TechTree
+﻿namespace Eco.Mods.TechTree
 {
     using System;
     using System.Collections.Generic;
