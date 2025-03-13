@@ -3,10 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-##All Files except those in this project's Code folder
-
+##Ignore the Unity Folder
 AlpacacornItemPack*
-!Code/*
 
 # User-specific files
 *.rsuser
