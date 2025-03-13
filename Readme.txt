@@ -1,4 +1,4 @@
-Last updated March 11, 2025 for Eco 0.11.1.10 beta release-847
+Last updated March 13, 2025 for Eco 0.11.1.10 beta release-847
 
 To install, just place the mod folder AlpacacornItemPack in your server's Mods -> UserCode folder and restart your server.
 
@@ -7,6 +7,17 @@ Feel free to update the .cs files for balancing purposes (let me know if you thi
 Let me know on mod.io if you have any further plushie requests or balancing suggestions!
 
 All models are original & made in Blender with textures created using Adobe Substance Painter. No AI was used in the creation of this item pack.
+
+Update 1.0.9 2025, March 13
+Fixed float error in PlushieSquirrelBaby.cs, changing value from .4 to 0.4f;
+
+Update 1.0.8 2025, March 12
+Adjusted z axis of meshes slightly to reduce clipping into the ground (most notably for the Plushie Squirrel Baby)
+
+Update 1.0.7 2025, March 12
+Adjusted the scale of all meshes (adjusted in Blender and reimported into Blender using adjusted settings) so objects weren't scaled by 100+ in Unity.
+Added Plushie Squirrel Baby upon being inspired by an accidentally small squirrel model through the aforementioned rescaling process.
+Bug: Plushie Bee Queen Counterfeit object may need to be picked up and replaced if the model shows up as an untextured cube.
 
 Update 1.0.6 2025, March 11
 Added Plushie Squirrel
