@@ -102,7 +102,6 @@
     [Tag("Housing")]
     [Tag("Plushie")]
     [Weight(100)]
-    [MaxStackSize(5)]
     [Tag(nameof(SurfaceTags.CanBeOnRug))]
     public partial class PlushieLeatherAlligatorItem : WorldObjectItem<PlushieLeatherAlligatorObject>
     {
