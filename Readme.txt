@@ -8,6 +8,13 @@ Let me know on mod.io if you have any further plushie requests or balancing sugg
 
 All models are original & made in Blender with textures created using Adobe Substance Painter. No AI was used in the creation of this item pack.
 
+Update 1.0.11 2025, March 13
+Added Plushie Mushroom 1
+Added Plushie Mushroom 2
+
+Update 1.0.10 2025, March 13
+Removed Stack Size limitation from all items
+
 Update 1.0.9 2025, March 13
 Fixed float error in PlushieSquirrelBaby.cs, changing value from .4 to 0.4f;
 
