@@ -53,25 +53,25 @@
     [RequireComponent(typeof(ForSaleComponent))]
     [RequireComponent(typeof(RoomRequirementsComponent))]
     [Tag("Usable")]
-    [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Mushroom 2 Item")]
+    [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Queen Bee Item")]
     [SupportedOSPlatform("windows7.0")]
 
-    public partial class PlushieMushroom2Object : WorldObject, IRepresentsItem
+    public partial class PlushieBeeQueenObject : WorldObject, IRepresentsItem
     {
-        public virtual Type RepresentedItemType => typeof(PlushieMushroom2Item);
-        public override LocString DisplayName => Localizer.DoStr("Plushie Mushroom 2");
+        public virtual Type RepresentedItemType => typeof(PlushieBeeQueenItem);
+        public override LocString DisplayName => Localizer.DoStr("Plushie Queen Bee");
         public override TableTextureMode TableTexture => TableTextureMode.Stone;
 
         protected override void Initialize()
         {
             this.ModsPreInitialize();
-            this.GetComponent<HousingComponent>().HomeValue = PlushieMushroom2Item.homeValue;
+            this.GetComponent<HousingComponent>().HomeValue = PlushieBeeQueenItem.homeValue;
             this.ModsPostInitialize();
         }
 
-        static PlushieMushroom2Object()
+        static PlushieBeeQueenObject()
         {
-            WorldObject.AddOccupancy<PlushieMushroom2Object>(new List<BlockOccupancy>(){
+            WorldObject.AddOccupancy<PlushieBeeQueenObject>(new List<BlockOccupancy>(){
             //Vector3(x, y, z):  z is up/down, y is forward/backward, x is left/right
             // back   Shorthand for writing Vector3(0, 0, -1).
             // down    Shorthand for writing Vector3(0, -1, 0).
@@ -95,22 +95,22 @@
 
     [Serialized]
     [SupportedOSPlatform("windows7.0")]
-    [LocDisplayName("Plushie Mushroom 2")]
-    [LocDescription("A huggable plushie Mushroom stuffed with cotton.")]
+    [LocDisplayName("Plushie Queen Bee")]
+    [LocDescription("A huggable Plushie Queen Bee stuffed with cotton. She is looking fabulous and has a stamp of authenticity. That's real gold!")]
     [Ecopedia("Housing Objects", "Decoration", createAsSubPage: true)]
     [Tag("Housing")]
     [Tag("Plushie")]
     [Weight(100)]
     [Tag(nameof(SurfaceTags.CanBeOnRug))]
-    public partial class PlushieMushroom2Item : WorldObjectItem<PlushieMushroom2Object>
+    public partial class PlushieBeeQueenItem : WorldObjectItem<PlushieBeeQueenObject>
     {
         protected override OccupancyContext GetOccupancyContext => new SideAttachedContext(DirectionAxisFlags.Down, WorldObject.GetOccupancyInfo(this.WorldObjectType));
         public override HomeFurnishingValue HomeValue => homeValue;
         public static readonly HomeFurnishingValue homeValue = new HomeFurnishingValue()
         {
-            ObjectName = typeof(PlushieMushroom2Object).UILink(),
+            ObjectName = typeof(PlushieBeeQueenObject).UILink(),
             Category = HousingConfig.GetRoomCategory("Decoration"),
-            BaseValue = 2,
+            BaseValue = 4,
             TypeForRoomLimit = Localizer.DoStr("Decoration"),
             DiminishingReturnMultiplier = 0.01f
         };
@@ -119,46 +119,49 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 1)]
-    [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Mushroom 2 Item")]
+    [RequiresSkill(typeof(TailoringSkill), 6)]
+    [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Queen Bee Item")]
     [SupportedOSPlatform("windows7.0")]
-    public partial class PlushieMushroom2Recipe : RecipeFamily
+    public partial class PlushieBeeQueenRecipe : RecipeFamily
     {
-        public PlushieMushroom2Recipe()
+        public PlushieBeeQueenRecipe()
         {
             var recipe = new Recipe();
             recipe.Init(
-                name: "PlushieMushroom2", //noloc
-                displayName: Localizer.DoStr("Plushie Mushroom 2"),
+                name: "PlushieBeeQueen", //noloc
+                displayName: Localizer.DoStr("Plushie Queen Bee"),
 
             ingredients: new List<IngredientElement>
             {
-                new IngredientElement(typeof(CottonFabricItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(CottonLintItem), 50, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonFabricItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonLintItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(CottonThreadItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(CharcoalPowderItem), 15, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(MagentaPowderItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(WhitePowderItem), 15, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent))
+                new IngredientElement(typeof(YellowPowderItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(BluePowderItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(IronOxideItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(WhitePowderItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(GoldBarItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent))
             },
             items: new List<CraftingElement>
             {
-                new CraftingElement<PlushieMushroom2Item>(),
+                new CraftingElement<PlushieBeeQueenItem>(),
             });
 
             this.Recipes = new List<Recipe> { recipe };
-            this.ExperienceOnCraft = 2;
+            //Multiplies the base experience (strangely appears to be 34) by this value
+            this.ExperienceOnCraft = 4;
             // Defines the amount of labor required and the required skill to add labor
             this.LaborInCalories = CreateLaborInCaloriesValue(100, typeof(TailoringSkill));
             // Defines our crafting time for the recipe
-            this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(TailoringSkill), start: 2f, skillType: typeof(TailoringSkill), typeof(TailoringFocusedSpeedTalent), typeof(TailoringParallelSpeedTalent));
+            this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(TailoringSkill), start: 3f, skillType: typeof(TailoringSkill), typeof(TailoringFocusedSpeedTalent), typeof(TailoringParallelSpeedTalent));
 
 
-            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Plushie Mushroom 2"
+            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Plushie Queen Bee"
             this.ModsPreInitialize();
-            this.Initialize(displayText: Localizer.DoStr("Plushie Mushroom 2"), recipeType: typeof(PlushieMushroom2Recipe));
+            this.Initialize(displayText: Localizer.DoStr("Plushie Queen Bee"), recipeType: typeof(PlushieBeeQueenRecipe));
             this.ModsPostInitialize();
             // Register our RecipeFamily instance with the crafting system so it can be crafted.
-            CraftingComponent.AddRecipe(tableType: typeof(TailoringTableObject), recipeFamily: this);
+            CraftingComponent.AddRecipe(tableType: typeof(AdvancedTailoringTableObject), recipeFamily: this);
 
         }
         /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>

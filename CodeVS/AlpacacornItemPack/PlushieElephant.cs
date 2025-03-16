@@ -119,7 +119,7 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 1)]
+    [RequiresSkill(typeof(TailoringSkill), 3)]
     [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Elephant Item")]
     [SupportedOSPlatform("windows7.0")]
     public partial class PlushieElephantRecipe : RecipeFamily
@@ -133,8 +133,8 @@
 
             ingredients: new List<IngredientElement>
             {
-                new IngredientElement(typeof(CottonFabricItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(CottonLintItem), 50, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonFabricItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonLintItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(CottonThreadItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(CharcoalPowderItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(WhitePowderItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent))
@@ -145,7 +145,7 @@
             });
 
             this.Recipes = new List<Recipe> { recipe };
-            this.ExperienceOnCraft = 2;
+            this.ExperienceOnCraft = 3;
             // Defines the amount of labor required and the required skill to add labor
             this.LaborInCalories = CreateLaborInCaloriesValue(100, typeof(TailoringSkill));
             // Defines our crafting time for the recipe

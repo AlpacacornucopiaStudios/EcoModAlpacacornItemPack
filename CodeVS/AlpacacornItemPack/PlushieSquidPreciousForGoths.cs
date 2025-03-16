@@ -53,25 +53,25 @@
     [RequireComponent(typeof(ForSaleComponent))]
     [RequireComponent(typeof(RoomRequirementsComponent))]
     [Tag("Usable")]
-    [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Banana Item")]
+    [Ecopedia("Housing Objects", "Decoration", subPageName: "Precious Plushie Squid For Goths Item")]
     [SupportedOSPlatform("windows7.0")]
 
-    public partial class PlushieBananaObject : WorldObject, IRepresentsItem
+    public partial class PlushieSquidPreciousForGothsObject : WorldObject, IRepresentsItem
     {
-        public virtual Type RepresentedItemType => typeof(PlushieBananaItem);
-        public override LocString DisplayName => Localizer.DoStr("Plushie Banana");
+        public virtual Type RepresentedItemType => typeof(PlushieSquidPreciousForGothsItem);
+        public override LocString DisplayName => Localizer.DoStr("Precious Plushie Squid For Goths");
         public override TableTextureMode TableTexture => TableTextureMode.Stone;
 
         protected override void Initialize()
         {
             this.ModsPreInitialize();
-            this.GetComponent<HousingComponent>().HomeValue = PlushieBananaItem.homeValue;
+            this.GetComponent<HousingComponent>().HomeValue = PlushieSquidPreciousForGothsItem.homeValue;
             this.ModsPostInitialize();
         }
 
-        static PlushieBananaObject()
+        static PlushieSquidPreciousForGothsObject()
         {
-            WorldObject.AddOccupancy<PlushieBananaObject>(new List<BlockOccupancy>(){
+            WorldObject.AddOccupancy<PlushieSquidPreciousForGothsObject>(new List<BlockOccupancy>(){
             //Vector3(x, y, z):  z is up/down, y is forward/backward, x is left/right
             // back   Shorthand for writing Vector3(0, 0, -1).
             // down    Shorthand for writing Vector3(0, -1, 0).
@@ -95,20 +95,20 @@
 
     [Serialized]
     [SupportedOSPlatform("windows7.0")]
-    [LocDisplayName("Plushie Banana")]
-    [LocDescription("A huggable plushie Banana stuffed with cotton.")]
+    [LocDisplayName("Precious Plushie Squid For Goths")]
+    [LocDescription("A huggable plushie Squid stuffed with cotton. They are holding an extraordinarily precious gem and exude a hypnotic power.")]
     [Ecopedia("Housing Objects", "Decoration", createAsSubPage: true)]
     [Tag("Housing")]
     [Tag("Plushie")]
     [Weight(100)]
     [Tag(nameof(SurfaceTags.CanBeOnRug))]
-    public partial class PlushieBananaItem : WorldObjectItem<PlushieBananaObject>
+    public partial class PlushieSquidPreciousForGothsItem : WorldObjectItem<PlushieSquidPreciousForGothsObject>
     {
         protected override OccupancyContext GetOccupancyContext => new SideAttachedContext(DirectionAxisFlags.Down, WorldObject.GetOccupancyInfo(this.WorldObjectType));
         public override HomeFurnishingValue HomeValue => homeValue;
         public static readonly HomeFurnishingValue homeValue = new HomeFurnishingValue()
         {
-            ObjectName = typeof(PlushieBananaObject).UILink(),
+            ObjectName = typeof(PlushieSquidPreciousForGothsObject).UILink(),
             Category = HousingConfig.GetRoomCategory("Decoration"),
             BaseValue = 2,
             TypeForRoomLimit = Localizer.DoStr("Decoration"),
@@ -119,45 +119,46 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 1)]
-    [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Banana Item")]
+    [RequiresSkill(typeof(TailoringSkill), 6)]
+    [Ecopedia("Housing Objects", "Decoration", subPageName: "Precious Plushie Squid For Goths Item")]
     [SupportedOSPlatform("windows7.0")]
-    public partial class PlushieBananaRecipe : RecipeFamily
+    public partial class PlushieSquidPreciousForGothsRecipe : RecipeFamily
     {
-        public PlushieBananaRecipe()
+        public PlushieSquidPreciousForGothsRecipe()
         {
             var recipe = new Recipe();
             recipe.Init(
-                name: "PlushieBanana", //noloc
-                displayName: Localizer.DoStr("Plushie Banana"),
+                name: "PlushieSquidPreciousForGoths", //noloc
+                displayName: Localizer.DoStr("Precious Plushie Squid For Goths"),
 
             ingredients: new List<IngredientElement>
             {
-                new IngredientElement(typeof(CottonFabricItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(CottonLintItem), 50, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonFabricItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonLintItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(CottonThreadItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(YellowPowderItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent))
-            },
+                new IngredientElement(typeof(IronOxideItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CharcoalPowderItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+				new IngredientElement(typeof(GlassItem), 4, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent))
+			},
             items: new List<CraftingElement>
             {
-                new CraftingElement<PlushieBananaItem>(),
+                new CraftingElement<PlushieSquidPreciousForGothsItem>(),
             });
 
             this.Recipes = new List<Recipe> { recipe };
-            //Multiplies the base experience (strangely appears to be 34) by this value
-            this.ExperienceOnCraft = 2;
+            this.ExperienceOnCraft = 3;
             // Defines the amount of labor required and the required skill to add labor
             this.LaborInCalories = CreateLaborInCaloriesValue(100, typeof(TailoringSkill));
             // Defines our crafting time for the recipe
             this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(TailoringSkill), start: 2f, skillType: typeof(TailoringSkill), typeof(TailoringFocusedSpeedTalent), typeof(TailoringParallelSpeedTalent));
 
 
-            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Plushie Banana"
+            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Plushie SquidPreciousForGoths"
             this.ModsPreInitialize();
-            this.Initialize(displayText: Localizer.DoStr("Plushie Banana"), recipeType: typeof(PlushieBananaRecipe));
+            this.Initialize(displayText: Localizer.DoStr("Precious Plushie Squid For Goths"), recipeType: typeof(PlushieSquidPreciousForGothsRecipe));
             this.ModsPostInitialize();
             // Register our RecipeFamily instance with the crafting system so it can be crafted.
-            CraftingComponent.AddRecipe(tableType: typeof(TailoringTableObject), recipeFamily: this);
+            CraftingComponent.AddRecipe(tableType: typeof(AdvancedTailoringTableObject), recipeFamily: this);
 
         }
         /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>

@@ -53,25 +53,25 @@
     [RequireComponent(typeof(ForSaleComponent))]
     [RequireComponent(typeof(RoomRequirementsComponent))]
     [Tag("Usable")]
-    [Ecopedia("Housing Objects", "Decoration", subPageName: "Precious Plushie Squid For Goths Item")]
+    [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Leather Alligator Item")]
     [SupportedOSPlatform("windows7.0")]
 
-    public partial class PlushieSquidPreciousForGothsObject : WorldObject, IRepresentsItem
+    public partial class PlushieLeatherAlligatorObject : WorldObject, IRepresentsItem
     {
-        public virtual Type RepresentedItemType => typeof(PlushieSquidPreciousForGothsItem);
-        public override LocString DisplayName => Localizer.DoStr("Precious Plushie Squid For Goths");
+        public virtual Type RepresentedItemType => typeof(PlushieLeatherAlligatorItem);
+        public override LocString DisplayName => Localizer.DoStr("Plushie Leather Alligator");
         public override TableTextureMode TableTexture => TableTextureMode.Stone;
 
         protected override void Initialize()
         {
             this.ModsPreInitialize();
-            this.GetComponent<HousingComponent>().HomeValue = PlushieSquidPreciousForGothsItem.homeValue;
+            this.GetComponent<HousingComponent>().HomeValue = PlushieLeatherAlligatorItem.homeValue;
             this.ModsPostInitialize();
         }
 
-        static PlushieSquidPreciousForGothsObject()
+        static PlushieLeatherAlligatorObject()
         {
-            WorldObject.AddOccupancy<PlushieSquidPreciousForGothsObject>(new List<BlockOccupancy>(){
+            WorldObject.AddOccupancy<PlushieLeatherAlligatorObject>(new List<BlockOccupancy>(){
             //Vector3(x, y, z):  z is up/down, y is forward/backward, x is left/right
             // back   Shorthand for writing Vector3(0, 0, -1).
             // down    Shorthand for writing Vector3(0, -1, 0).
@@ -83,6 +83,7 @@
              new BlockOccupancy(new Vector3i(0, 0, 0)),
              //new BlockOccupancy(new Vector3i(0, 0, -1))
             });
+            
         }
 
         /// <summary>Hook for mods to customize WorldObject before initialization. You can change housing values here.</summary>
@@ -95,20 +96,20 @@
 
     [Serialized]
     [SupportedOSPlatform("windows7.0")]
-    [LocDisplayName("Precious Plushie Squid For Goths")]
-    [LocDescription("A huggable plushie Squid stuffed with cotton. They are holding an extraordinarily precious gem and exude a hypnotic power.")]
+    [LocDisplayName("Plushie Leather Alligator")]
+    [LocDescription("A huggable Plushie Leather Alligator stuffed with cotton.")]
     [Ecopedia("Housing Objects", "Decoration", createAsSubPage: true)]
     [Tag("Housing")]
     [Tag("Plushie")]
     [Weight(100)]
     [Tag(nameof(SurfaceTags.CanBeOnRug))]
-    public partial class PlushieSquidPreciousForGothsItem : WorldObjectItem<PlushieSquidPreciousForGothsObject>
+    public partial class PlushieLeatherAlligatorItem : WorldObjectItem<PlushieLeatherAlligatorObject>
     {
         protected override OccupancyContext GetOccupancyContext => new SideAttachedContext(DirectionAxisFlags.Down, WorldObject.GetOccupancyInfo(this.WorldObjectType));
         public override HomeFurnishingValue HomeValue => homeValue;
         public static readonly HomeFurnishingValue homeValue = new HomeFurnishingValue()
         {
-            ObjectName = typeof(PlushieSquidPreciousForGothsObject).UILink(),
+            ObjectName = typeof(PlushieLeatherAlligatorObject).UILink(),
             Category = HousingConfig.GetRoomCategory("Decoration"),
             BaseValue = 2,
             TypeForRoomLimit = Localizer.DoStr("Decoration"),
@@ -120,41 +121,40 @@
     //Recipe////////////////////////////////////////////////////////////////
 
     [RequiresSkill(typeof(TailoringSkill), 1)]
-    [Ecopedia("Housing Objects", "Decoration", subPageName: "Precious Plushie Squid For Goths Item")]
+    [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Leather Alligator Item")]
     [SupportedOSPlatform("windows7.0")]
-    public partial class PlushieSquidPreciousForGothsRecipe : RecipeFamily
+    public partial class PlushieLeatherAlligatorRecipe : RecipeFamily
     {
-        public PlushieSquidPreciousForGothsRecipe()
+        public PlushieLeatherAlligatorRecipe()
         {
             var recipe = new Recipe();
             recipe.Init(
-                name: "PlushieSquidPreciousForGoths", //noloc
-                displayName: Localizer.DoStr("Precious Plushie Squid For Goths"),
+                name: "PlushieLeatherAlligator", //noloc
+                displayName: Localizer.DoStr("Plushie Leather Alligator"),
 
             ingredients: new List<IngredientElement>
             {
-                new IngredientElement(typeof(CottonFabricItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(CottonLintItem), 50, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(LeatherHideItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonLintItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(CottonThreadItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(IronOxideItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(CharcoalPowderItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent))
+                new IngredientElement(typeof(CopperHydroxideItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent))
             },
             items: new List<CraftingElement>
             {
-                new CraftingElement<PlushieSquidPreciousForGothsItem>(),
+                new CraftingElement<PlushieLeatherAlligatorItem>(),
             });
 
             this.Recipes = new List<Recipe> { recipe };
-            this.ExperienceOnCraft = 2;
+            this.ExperienceOnCraft = 3;
             // Defines the amount of labor required and the required skill to add labor
             this.LaborInCalories = CreateLaborInCaloriesValue(100, typeof(TailoringSkill));
             // Defines our crafting time for the recipe
             this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(TailoringSkill), start: 2f, skillType: typeof(TailoringSkill), typeof(TailoringFocusedSpeedTalent), typeof(TailoringParallelSpeedTalent));
 
 
-            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Plushie SquidPreciousForGoths"
+            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Plushie Leather Alligator"
             this.ModsPreInitialize();
-            this.Initialize(displayText: Localizer.DoStr("Precious Plushie Squid For Goths"), recipeType: typeof(PlushieSquidPreciousForGothsRecipe));
+            this.Initialize(displayText: Localizer.DoStr("Plushie Leather Alligator"), recipeType: typeof(PlushieLeatherAlligatorRecipe));
             this.ModsPostInitialize();
             // Register our RecipeFamily instance with the crafting system so it can be crafted.
             CraftingComponent.AddRecipe(tableType: typeof(TailoringTableObject), recipeFamily: this);
