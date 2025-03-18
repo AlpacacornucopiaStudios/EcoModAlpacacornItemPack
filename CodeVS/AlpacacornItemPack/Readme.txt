@@ -1,4 +1,4 @@
-Last updated March 15, 2025 for Eco 0.11.1.10 beta release-847
+Last updated March 18, 2025 for Eco 0.11.1.10 beta release-847
 
 To install, just place the mod folder AlpacacornItemPack in your server's Mods -> UserCode folder and restart your server.
 
@@ -7,6 +7,10 @@ Feel free to update the .cs files for balancing purposes (let me know if you thi
 Let me know on mod.io if you have any further plushie requests or balancing suggestions!
 
 All models are original & made in Blender with textures created using Adobe Substance Painter. No AI was used in the creation of this item pack.
+
+Update 1.1.0 2025, March 18
+Added PetRock01 through PetRock07 all using the same texture set, craftable by Painters with rocks, oil, and oil paint
+Adjusted all plushies to use more colored powders
 
 Update 1.0.13 2025, March 15
 Misc Updates:

@@ -136,10 +136,10 @@
                 new IngredientElement(typeof(CottonFabricItem), 4, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(CottonLintItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(CottonThreadItem), 2, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(CharcoalPowderItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(WhitePowderItem), 2, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(IronOxideItem), 2, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(YellowPowderItem), 2, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent))
+                new IngredientElement(typeof(CharcoalPowderItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(WhitePowderItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(IronOxideItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(YellowPowderItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent))
             },
             items: new List<CraftingElement>
             {
