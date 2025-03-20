@@ -1,12 +1,31 @@
-Last updated March 18, 2025 for Eco 0.11.1.10 beta release-847
+Last updated for Eco 0.11.1.10 beta release-847
 
 To install, just place the mod folder AlpacacornItemPack in your server's Mods -> UserCode folder and restart your server.
 
 Feel free to update the .cs files for balancing purposes (let me know if you think something is way off and I can adjust it, as well).
-
 Let me know on mod.io if you have any further plushie requests or balancing suggestions!
 
-All models are original & made in Blender with textures created using Adobe Substance Painter. No AI was used in the creation of this item pack.
+Almost all models are original & made by me in Blender with textures created using Adobe Substance Painter. 
+No AI was used in the creation of this item pack.
+
+Attributions:
+	Mesh: "3D Origami crane" (https://skfb.ly/m5lih20ba) by JuanG3D is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). Crane texture has been changed.
+
+Update 1.1.3 2025, March 20
+Added Paper Crane (see attribution for mesh)
+Added Paper Mache Pear
+Added Plushie Alpacacorn
+Added Traffic Cone
+Added Traffic Barricade A Frame
+Corrected Counterfeit Bee Crown material to lack the seal of authenticity
+
+Update 1.1.2 2025, March 19
+Fix materials to use GPU rendering
+Fix materials to use double sided global illumination
+Added Large Plushie Squirrel (3x3)
+
+Update 1.1.1 2025, March 18
+Fixed shader on Pet Rocks to curved, so they no longer float on the horizon.
 
 Update 1.1.0 2025, March 18
 Added PetRock01 through PetRock07 all using the same texture set, craftable by Painters with rocks, oil, and oil paint
