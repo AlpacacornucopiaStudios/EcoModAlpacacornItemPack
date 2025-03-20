@@ -72,7 +72,7 @@
         static PlushiePinkElephantObject()
         {
             WorldObject.AddOccupancy<PlushiePinkElephantObject>(new List<BlockOccupancy>(){
-            //Vector3(x, y, z):  z is up/down, y is forward/backward, x is left/right
+//Vector3(x, y, z): x is left/right, y is up/down, z is forward/backward
             // back   Shorthand for writing Vector3(0, 0, -1).
             // down    Shorthand for writing Vector3(0, -1, 0).
             // forward Shorthand for writing Vector3(0, 0, 1).
