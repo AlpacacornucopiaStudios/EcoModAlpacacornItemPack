@@ -69,9 +69,17 @@
             this.ModsPostInitialize();
         }
 
+
+
         static PlushieSquirrelLargeObject()
         {
             var occupancies = new List<BlockOccupancy>();
+
+            //Vector3(x, y, z):  x is left/right, y is up/down, z is forward/backward
+            // back   Shorthand for writing Vector3(0, 0, -1).
+            // down    Shorthand for writing Vector3(0, -1, 0).
+            // forward Shorthand for writing Vector3(0, 0, 1).
+            // left    Shorthand for writing Vector3(-1, 0, 0).
 
             for (int x = -1; x <= 1; x++)
                 for (int y = 0; y <= 2; y++)
@@ -80,49 +88,6 @@
              WorldObject.AddOccupancy<PlushieSquirrelLargeObject>(occupancies);
         }
 
-        /*static PlushieSquirrelLargeObject()
-        {
-            WorldObject.AddOccupancy<PlushieSquirrelLargeObject>(new List<BlockOccupancy>(){
-            //Vector3(x, y, z):  x is left/right, y is up/down, z is forward/backward
-            // back   Shorthand for writing Vector3(0, 0, -1).
-            // down    Shorthand for writing Vector3(0, -1, 0).
-            // forward Shorthand for writing Vector3(0, 0, 1).
-            // left    Shorthand for writing Vector3(-1, 0, 0).
-
-
-             new BlockOccupancy(new Vector3i(0, 0, 0)),
-             new BlockOccupancy(new Vector3i(-1, 0, 0)),
-             new BlockOccupancy(new Vector3i(1, 0, 0)),
-             new BlockOccupancy(new Vector3i(0, 0, -1)),
-             new BlockOccupancy(new Vector3i(-1, 0, -1)),
-             new BlockOccupancy(new Vector3i(1, 0, -1)),
-             new BlockOccupancy(new Vector3i(0, 0, 1)),
-             new BlockOccupancy(new Vector3i(-1, 0, 1)),
-             new BlockOccupancy(new Vector3i(1, 0, 1)),
-
-             new BlockOccupancy(new Vector3i(0, 1, 0)),
-             new BlockOccupancy(new Vector3i(-1, 1, 0)),
-             new BlockOccupancy(new Vector3i(1, 1, 0)),
-             new BlockOccupancy(new Vector3i(0, 1, -1)),
-             new BlockOccupancy(new Vector3i(-1, 1, -1)),
-             new BlockOccupancy(new Vector3i(1, 1, -1)),
-             new BlockOccupancy(new Vector3i(0, 1, 1)),
-             new BlockOccupancy(new Vector3i(-1, 1, 1)),
-             new BlockOccupancy(new Vector3i(1, 1, 1)),
-
-             new BlockOccupancy(new Vector3i(0, 2, 0)),
-             new BlockOccupancy(new Vector3i(-1, 2, 0)),
-             new BlockOccupancy(new Vector3i(1, 2, 0)),
-             new BlockOccupancy(new Vector3i(0, 2, -1)),
-             new BlockOccupancy(new Vector3i(-1, 2, -1)),
-             new BlockOccupancy(new Vector3i(1, 2, -1)),
-             new BlockOccupancy(new Vector3i(0, 2, 1)),
-             new BlockOccupancy(new Vector3i(-1, 2, 1)),
-             new BlockOccupancy(new Vector3i(1, 2, 1))
-
-            });
-        }
-        */
         /// <summary>Hook for mods to customize WorldObject before initialization. You can change housing values here.</summary>
         partial void ModsPreInitialize();
         /// <summary>Hook for mods to customize WorldObject after initialization.</summary>

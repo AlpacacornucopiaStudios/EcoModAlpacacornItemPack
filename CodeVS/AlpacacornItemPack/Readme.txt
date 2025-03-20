@@ -16,8 +16,9 @@ Added Paper Crane (see attribution for mesh)
 Added Paper Mache Pear
 Added Plushie Alpacacorn
 Added Traffic Cone
-Added Traffic Barricade A Frame
+Added Traffic Barricade A-Frame
 Corrected Counterfeit Bee Crown material to lack the seal of authenticity
+Correct comments in all code about xyz vector 3 directions
 
 Update 1.1.2 2025, March 19
 Fix materials to use GPU rendering

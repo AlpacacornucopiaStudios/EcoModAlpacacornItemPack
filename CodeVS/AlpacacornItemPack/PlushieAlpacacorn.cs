@@ -42,7 +42,7 @@
     using System.Runtime.Versioning;
     using Eco.Mods.Organisms;
     using Eco.Simulation.WorldLayers;
-  
+
 
     //Object////////////////////////////////////////////////////////////////
 
@@ -53,25 +53,25 @@
     [RequireComponent(typeof(ForSaleComponent))]
     [RequireComponent(typeof(RoomRequirementsComponent))]
     [Tag("Usable")]
-    [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Alligator Item")]
+    [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Alpacacorn Item")]
     [SupportedOSPlatform("windows7.0")]
 
-    public partial class PlushieAlligatorObject : WorldObject, IRepresentsItem
+    public partial class AIPPlushieAlpacacornObject : WorldObject, IRepresentsItem
     {
-        public virtual Type RepresentedItemType => typeof(PlushieAlligatorItem);
-        public override LocString DisplayName => Localizer.DoStr("Plushie Alligator");
+        public virtual Type RepresentedItemType => typeof(AIPPlushieAlpacacornItem);
+        public override LocString DisplayName => Localizer.DoStr("Plushie Alpacacorn");
         public override TableTextureMode TableTexture => TableTextureMode.Stone;
 
         protected override void Initialize()
         {
             this.ModsPreInitialize();
-            this.GetComponent<HousingComponent>().HomeValue = PlushieAlligatorItem.homeValue;
+            this.GetComponent<HousingComponent>().HomeValue = AIPPlushieAlpacacornItem.homeValue;
             this.ModsPostInitialize();
         }
 
-        static PlushieAlligatorObject()
+        static AIPPlushieAlpacacornObject()
         {
-            WorldObject.AddOccupancy<PlushieAlligatorObject>(new List<BlockOccupancy>(){
+            WorldObject.AddOccupancy<AIPPlushieAlpacacornObject>(new List<BlockOccupancy>(){
 //Vector3(x, y, z): x is left/right, y is up/down, z is forward/backward
             // back   Shorthand for writing Vector3(0, 0, -1).
             // down    Shorthand for writing Vector3(0, -1, 0).
@@ -95,20 +95,20 @@
 
     [Serialized]
     [SupportedOSPlatform("windows7.0")]
-    [LocDisplayName("Plushie Alligator")]
-    [LocDescription("A huggable plushie Alligator stuffed with cotton.")]
+    [LocDisplayName("Plushie Alpacacorn")]
+    [LocDescription("A huggable plushie Alpacacorn stuffed with cotton.")]
     [Ecopedia("Housing Objects", "Decoration", createAsSubPage: true)]
     [Tag("Housing")]
     [Tag("Plushie")]
     [Weight(100)]
     [Tag(nameof(SurfaceTags.CanBeOnRug))]
-    public partial class PlushieAlligatorItem : WorldObjectItem<PlushieAlligatorObject>
+    public partial class AIPPlushieAlpacacornItem : WorldObjectItem<AIPPlushieAlpacacornObject>
     {
         protected override OccupancyContext GetOccupancyContext => new SideAttachedContext(DirectionAxisFlags.Down, WorldObject.GetOccupancyInfo(this.WorldObjectType));
         public override HomeFurnishingValue HomeValue => homeValue;
         public static readonly HomeFurnishingValue homeValue = new HomeFurnishingValue()
         {
-            ObjectName = typeof(PlushieAlligatorObject).UILink(),
+            ObjectName = typeof(AIPPlushieAlpacacornObject).UILink(),
             Category = HousingConfig.GetRoomCategory("Decoration"),
             BaseValue = 2,
             TypeForRoomLimit = Localizer.DoStr("Decoration"),
@@ -119,28 +119,35 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 1)]
-    [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Alligator Item")]
+    [RequiresSkill(typeof(TailoringSkill), 4)]
+    [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Alpacacorn Item")]
     [SupportedOSPlatform("windows7.0")]
-    public partial class PlushieAlligatorRecipe : RecipeFamily
+    public partial class AIPPlushieAlpacacornRecipe : RecipeFamily
     {
-        public PlushieAlligatorRecipe()
+        public AIPPlushieAlpacacornRecipe()
         {
             var recipe = new Recipe();
             recipe.Init(
-                name: "PlushieAlligator", //noloc
-                displayName: Localizer.DoStr("Plushie Alligator"),
+                name: "AIPPlushieAlpacacorn", //noloc
+                displayName: Localizer.DoStr("Plushie Alpacacorn"),
 
             ingredients: new List<IngredientElement>
             {
                 new IngredientElement(typeof(CottonFabricItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(CottonLintItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(CottonThreadItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(CopperHydroxideItem), 30, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent))
+                new IngredientElement(typeof(IronOxideItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CopperHydroxideItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(BluePowderItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CyanPowderItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),                
+                new IngredientElement(typeof(MagentaPowderItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(YellowPowderItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CharcoalPowderItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(WhitePowderItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent))
             },
             items: new List<CraftingElement>
             {
-                new CraftingElement<PlushieAlligatorItem>(),
+                new CraftingElement<AIPPlushieAlpacacornItem>(),
             });
 
             this.Recipes = new List<Recipe> { recipe };
@@ -151,12 +158,12 @@
             this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(TailoringSkill), start: 2f, skillType: typeof(TailoringSkill), typeof(TailoringFocusedSpeedTalent), typeof(TailoringParallelSpeedTalent));
 
 
-            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Plushie Alligator"
+            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Plushie Alpacacorn"
             this.ModsPreInitialize();
-            this.Initialize(displayText: Localizer.DoStr("Plushie Alligator"), recipeType: typeof(PlushieAlligatorRecipe));
+            this.Initialize(displayText: Localizer.DoStr("Plushie Alpacacorn"), recipeType: typeof(AIPPlushieAlpacacornRecipe));
             this.ModsPostInitialize();
             // Register our RecipeFamily instance with the crafting system so it can be crafted.
-            CraftingComponent.AddRecipe(tableType: typeof(TailoringTableObject), recipeFamily: this);
+            CraftingComponent.AddRecipe(tableType: typeof(AdvancedTailoringTableObject), recipeFamily: this);
 
         }
         /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
