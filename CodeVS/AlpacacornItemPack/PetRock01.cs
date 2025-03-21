@@ -43,7 +43,6 @@
     using Eco.Mods.Organisms;
     using Eco.Simulation.WorldLayers;
 
-
     //Object////////////////////////////////////////////////////////////////
 
     [Serialized]
@@ -114,7 +113,6 @@
             DiminishingReturnMultiplier = 0.01f
         };
     }
-
 
     //Recipe////////////////////////////////////////////////////////////////
 

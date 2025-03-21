@@ -26,7 +26,7 @@ Update 1.1.2 2025, March 19
 	Added Large Plushie Squirrel (3x3)
 
 Update 1.1.1 2025, March 18
-	
+	Fixed shader on Pet Rocks to curved, so they no longer float on the horizon.
 
 Update 1.1.0 2025, March 18
 	Added PetRock01 through PetRock07 all using the same texture set, craftable by Painters with rocks, oil, and oil paint

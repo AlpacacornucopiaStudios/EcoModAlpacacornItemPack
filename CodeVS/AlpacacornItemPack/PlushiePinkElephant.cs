@@ -43,7 +43,6 @@
     using Eco.Mods.Organisms;
     using Eco.Simulation.WorldLayers;
 
-
     //Object////////////////////////////////////////////////////////////////
 
     [Serialized]
