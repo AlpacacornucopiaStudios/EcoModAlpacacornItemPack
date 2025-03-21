@@ -33,10 +33,10 @@ Update 1.1.0 2025, March 18
 	Adjusted all plushies to use more colored powders
 
 Update 1.0.13 2025, March 15
-Misc Updates:
-	Fix typo in Queen Bee recipes
-	Rename Bee Queens to Queen Bees
-	Added the word Counterfeit to the Counterfeit Queen Bee recipe to make it more obvious
+	Misc Updates:
+		Fix typo in Queen Bee recipes
+		Rename Bee Queens to Queen Bees
+		Added the word Counterfeit to the Counterfeit Queen Bee recipe to make it more obvious
 
 Rebalancing Update:
 	Reduced amount of cotton fabric needed from 20 to 10 for most plushies
