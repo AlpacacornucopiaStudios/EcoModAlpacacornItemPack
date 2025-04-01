@@ -118,7 +118,7 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 4)]
+    [RequiresSkill(typeof(TailoringSkill), 7)]
     [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Pink Elephant Item")]
     [SupportedOSPlatform("windows7.0")]
     public partial class PlushiePinkElephantRecipe : RecipeFamily

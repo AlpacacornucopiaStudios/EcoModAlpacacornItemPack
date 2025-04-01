@@ -118,7 +118,7 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 5)]
+    [RequiresSkill(typeof(TailoringSkill), 4)]
     [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Cow Item")]
     [SupportedOSPlatform("windows7.0")]
     public partial class AIPPlushieCowRecipe : RecipeFamily

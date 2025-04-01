@@ -118,7 +118,7 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 5)]
+    [RequiresSkill(typeof(TailoringSkill), 2)]
     [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Avocado Half 1 Item")]
     [SupportedOSPlatform("windows7.0")]
     public partial class AIPPlushieAvocadoHalf1Recipe : RecipeFamily

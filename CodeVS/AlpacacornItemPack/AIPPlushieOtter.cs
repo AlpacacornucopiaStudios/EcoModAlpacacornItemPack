@@ -118,7 +118,7 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 5)]
+    [RequiresSkill(typeof(TailoringSkill), 3)]
     [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Otter Item")]
     [SupportedOSPlatform("windows7.0")]
     public partial class AIPPlushieOtterRecipe : RecipeFamily

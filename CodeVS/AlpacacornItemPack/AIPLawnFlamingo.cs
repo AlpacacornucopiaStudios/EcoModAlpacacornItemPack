@@ -118,7 +118,7 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 5)]
+    [RequiresSkill(typeof(PaintingSkill), 2)]
     [Ecopedia("Housing Objects", "Decoration", subPageName: "Lawn Flamingo Item")]
     [SupportedOSPlatform("windows7.0")]
     public partial class AIPLawnFlamingoRecipe : RecipeFamily
@@ -153,7 +153,7 @@
             this.Initialize(displayText: Localizer.DoStr("Lawn Flamingo"), recipeType: typeof(AIPLawnFlamingoRecipe));
             this.ModsPostInitialize();
             // Register our RecipeFamily instance with the crafting system so it can be crafted.
-            CraftingComponent.AddRecipe(tableType: typeof(TailoringTableObject), recipeFamily: this);
+            CraftingComponent.AddRecipe(tableType: typeof(PaintMixerObject), recipeFamily: this);
 
         }
         /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>

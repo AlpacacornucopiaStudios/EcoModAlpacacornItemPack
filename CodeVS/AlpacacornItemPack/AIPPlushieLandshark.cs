@@ -80,7 +80,7 @@
              //new BlockOccupancy(new Vector3i(0, 1, 0)),
              //new BlockOccupancy(new Vector3i(0, 1, -1)),
              new BlockOccupancy(new Vector3i(0, 0, 0)),
-             //new BlockOccupancy(new Vector3i(0, 0, -1))
+             new BlockOccupancy(new Vector3i(0, 0, -1))
             });
         }
 
@@ -118,7 +118,7 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 5)]
+    [RequiresSkill(typeof(TailoringSkill), 6)]
     [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Landshark Item")]
     [SupportedOSPlatform("windows7.0")]
     public partial class AIPPlushieLandsharkRecipe : RecipeFamily

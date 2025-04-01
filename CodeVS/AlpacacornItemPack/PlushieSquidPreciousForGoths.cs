@@ -118,7 +118,7 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 6)]
+    [RequiresSkill(typeof(TailoringSkill), 7)]
     [Ecopedia("Housing Objects", "Decoration", subPageName: "Precious Plushie Squid For Goths Item")]
     [SupportedOSPlatform("windows7.0")]
     public partial class PlushieSquidPreciousForGothsRecipe : RecipeFamily

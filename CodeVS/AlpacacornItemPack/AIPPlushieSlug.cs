@@ -118,7 +118,7 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 5)]
+    [RequiresSkill(typeof(TailoringSkill), 1)]
     [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Slug Item")]
     [SupportedOSPlatform("windows7.0")]
     public partial class AIPPlushieSlugRecipe : RecipeFamily

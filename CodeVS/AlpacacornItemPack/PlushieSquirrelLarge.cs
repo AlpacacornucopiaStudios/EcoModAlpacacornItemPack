@@ -121,7 +121,7 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 5)]
+    [RequiresSkill(typeof(TailoringSkill), 7)]
     [Ecopedia("Housing Objects", "Decoration", subPageName: "Large Plushie Squirrel Item")]
     [SupportedOSPlatform("windows7.0")]
     public partial class PlushieSquirrelLargeRecipe : RecipeFamily

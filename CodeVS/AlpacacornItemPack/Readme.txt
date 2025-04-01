@@ -11,6 +11,26 @@ No AI was used in the creation of this item pack.
 Attributions:
 	Mesh: "3D Origami crane" (https://skfb.ly/m5lih20ba) by JuanG3D is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). Crane texture has been changed.
 
+Update 1.2.0 2025, March 31
+	Adjusted minimum required Tailor Level and Painter level to spread out recipes a bit more evenly.
+	Modified Traffic Cone Material to be less shiny
+	Added Lawn Flamingo
+	Added Plushie Avocado Half 1
+	Added Plushie Avocado Half 2
+	Added Plushie Avocado Pair
+	Added Plushie Bear
+	Added Plushie Cow
+	Added Plushie Giraffe
+	Added Plushie Hippo
+	Added Plushie Landshark
+	Added Plushie Monkey
+	Added Plushie Otter
+	Added Plushie Platypus
+	Added Plushie Rainfrog
+	Added Plushie Slug
+	Added Plushie Snail
+	Added Plushie Strawberry
+
 Update 1.1.3 2025, March 20
 	Added Paper Crane (see attribution for mesh)
 	Added Paper Mache Pear
