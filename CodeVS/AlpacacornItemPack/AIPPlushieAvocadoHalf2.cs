@@ -121,41 +121,31 @@
     [RequiresSkill(typeof(TailoringSkill), 2)]
     [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Avocado Half 2 Item")]
     [SupportedOSPlatform("windows7.0")]
-    public partial class AIPPlushieAvocadoHalf2Recipe : RecipeFamily
+    public partial class AIPPlushieAvocadoHalf2Recipe : Recipe
     {
         public AIPPlushieAvocadoHalf2Recipe()
         {
-            var recipe = new Recipe();
-            recipe.Init(
+           
+            this.Init(
                 name: "AIPPlushieAvocadoHalf2", //noloc
                 displayName: Localizer.DoStr("Plushie Avocado Half 2"),
 
             ingredients: new List<IngredientElement>
             {
-                new IngredientElement(typeof(CottonFabricItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonFabricItem), 4, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(CottonLintItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(CottonThreadItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonFabricItem), 4, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(CopperHydroxideItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(AIPGlassEyeBeadItem), 2, true)
             },
             items: new List<CraftingElement>
             {
                 new CraftingElement<AIPPlushieAvocadoHalf2Item>(),
-            });
+            }); 
 
-            this.Recipes = new List<Recipe> { recipe };
-            this.ExperienceOnCraft = 3;
-            // Defines the amount of labor required and the required skill to add labor
-            this.LaborInCalories = CreateLaborInCaloriesValue(100, typeof(TailoringSkill));
-            // Defines our crafting time for the recipe
-            this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(TailoringSkill), start: 2f, skillType: typeof(TailoringSkill), typeof(TailoringFocusedSpeedTalent), typeof(TailoringParallelSpeedTalent));
-
-
-            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Plushie Avocado Half 2"
             this.ModsPreInitialize();
-            this.Initialize(displayText: Localizer.DoStr("Plushie Avocado Half 2"), recipeType: typeof(AIPPlushieAvocadoHalf2Recipe));
             this.ModsPostInitialize();
-            // Register our RecipeFamily instance with the crafting system so it can be crafted.
-            CraftingComponent.AddRecipe(tableType: typeof(TailoringTableObject), recipeFamily: this);
+            CraftingComponent.AddTagProduct(tableType: typeof(TailoringTableObject), typeof(AIPPlushieAvocadoHalf1Recipe), this);
 
         }
         /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>

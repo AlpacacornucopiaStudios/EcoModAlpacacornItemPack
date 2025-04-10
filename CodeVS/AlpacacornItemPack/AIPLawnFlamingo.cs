@@ -134,7 +134,9 @@
             {
                 new IngredientElement(typeof(BoardItem), 5, typeof(PaintingSkill), typeof(PaintingLavishResourcesTalent)),
                 new IngredientElement(typeof(MagentaPowderItem), 30, typeof(PaintingSkill), typeof(PaintingLavishResourcesTalent)),
-                new IngredientElement(typeof(OilPaintItem), 5, typeof(PaintingSkill), typeof(PaintingLavishResourcesTalent))},
+                new IngredientElement(typeof(OilPaintItem), 5, typeof(PaintingSkill), typeof(PaintingLavishResourcesTalent)),
+                new IngredientElement(typeof(AIPLimestoneEyeBeadItem), 2, true)
+            },
             items: new List<CraftingElement>
             {
                 new CraftingElement<AIPLawnFlamingoItem>(),

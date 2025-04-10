@@ -95,7 +95,7 @@
     [Serialized]
     [SupportedOSPlatform("windows7.0")]
     [LocDisplayName("Plushie Bear")]
-    [LocDescription("A huggable plushie Bear stuffed with cotton.")]
+    [LocDescription("A huggable plushie Bear stuffed with cotton. It appears to be wiggling and wants to be held.")]
     [Ecopedia("Housing Objects", "Decoration", createAsSubPage: true)]
     [Tag("Housing")]
     [Tag("Plushie")]
@@ -118,7 +118,7 @@
 
     //Recipe////////////////////////////////////////////////////////////////
 
-    [RequiresSkill(typeof(TailoringSkill), 3)]
+    [RequiresSkill(typeof(TailoringSkill), 1)]
     [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Bear Item")]
     [SupportedOSPlatform("windows7.0")]
     public partial class AIPPlushieBearRecipe : RecipeFamily
@@ -132,14 +132,16 @@
 
             ingredients: new List<IngredientElement>
             {
-                new IngredientElement(typeof(CottonFabricItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonFabricItem), 4, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(CottonLintItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(CottonThreadItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonThreadItem), 4, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(MagentaPowderItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(WhitePowderItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(BlackPowderItem), 15, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CharcoalPowderItem), 15, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(IronOxideItem), 15, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(CopperHydroxideItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent))
+                new IngredientElement(typeof(CopperHydroxideItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(BluePowderItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(AIPLimestoneEyeBeadItem), 2, true)
             },
             items: new List<CraftingElement>
             {

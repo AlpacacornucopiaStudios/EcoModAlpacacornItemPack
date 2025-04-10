@@ -109,7 +109,7 @@
         {
             ObjectName = typeof(AIPPlushieLandsharkObject).UILink(),
             Category = HousingConfig.GetRoomCategory("Decoration"),
-            BaseValue = 2,
+            BaseValue = 4,
             TypeForRoomLimit = Localizer.DoStr("Decoration"),
             DiminishingReturnMultiplier = 0.01f
         };
@@ -132,11 +132,12 @@
 
             ingredients: new List<IngredientElement>
             {
-                new IngredientElement(typeof(CottonFabricItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(CottonLintItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(CottonThreadItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonFabricItem), 8, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonLintItem), 30, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(CottonThreadItem), 8, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(CharcoalPowderItem), 10, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-                new IngredientElement(typeof(WhitePowderItem), 30, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent))
+                new IngredientElement(typeof(WhitePowderItem), 30, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
+                new IngredientElement(typeof(AIPLimestoneEyeBeadItem), 2, true)
             },
             items: new List<CraftingElement>
             {
@@ -146,7 +147,7 @@
             this.Recipes = new List<Recipe> { recipe };
             this.ExperienceOnCraft = 3;
             // Defines the amount of labor required and the required skill to add labor
-            this.LaborInCalories = CreateLaborInCaloriesValue(100, typeof(TailoringSkill));
+            this.LaborInCalories = CreateLaborInCaloriesValue(200, typeof(TailoringSkill));
             // Defines our crafting time for the recipe
             this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(TailoringSkill), start: 2f, skillType: typeof(TailoringSkill), typeof(TailoringFocusedSpeedTalent), typeof(TailoringParallelSpeedTalent));
 
@@ -156,7 +157,7 @@
             this.Initialize(displayText: Localizer.DoStr("Plushie Landshark"), recipeType: typeof(AIPPlushieLandsharkRecipe));
             this.ModsPostInitialize();
             // Register our RecipeFamily instance with the crafting system so it can be crafted.
-            CraftingComponent.AddRecipe(tableType: typeof(TailoringTableObject), recipeFamily: this);
+            CraftingComponent.AddRecipe(tableType: typeof(AdvancedTailoringTableObject), recipeFamily: this);
 
         }
         /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>

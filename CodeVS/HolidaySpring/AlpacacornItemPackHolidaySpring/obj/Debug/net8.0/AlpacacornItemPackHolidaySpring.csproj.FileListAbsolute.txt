@@ -1,0 +1,6 @@
+E:\Dropbox\Blender and Unreal\Unity\Eco\AlpacacornItemPack\CodeVS\HolidaySpring\AlpacacornItemPackHolidaySpring\obj\Debug\net8.0\AlpacacornItemPackHolidaySpring.csproj.AssemblyReference.cache
+E:\Dropbox\Blender and Unreal\Unity\Eco\AlpacacornItemPack\CodeVS\HolidaySpring\AlpacacornItemPackHolidaySpring\obj\Debug\net8.0\AlpacacornItemPackHolidaySpring.GeneratedMSBuildEditorConfig.editorconfig
+E:\Dropbox\Blender and Unreal\Unity\Eco\AlpacacornItemPack\CodeVS\HolidaySpring\AlpacacornItemPackHolidaySpring\obj\Debug\net8.0\AlpacacornItemPackHolidaySpring.AssemblyInfoInputs.cache
+E:\Dropbox\Blender and Unreal\Unity\Eco\AlpacacornItemPack\CodeVS\HolidaySpring\AlpacacornItemPackHolidaySpring\obj\Debug\net8.0\AlpacacornItemPackHolidaySpring.AssemblyInfo.cs
+E:\Dropbox\Blender and Unreal\Unity\Eco\AlpacacornItemPack\CodeVS\HolidaySpring\AlpacacornItemPackHolidaySpring\obj\Debug\net8.0\AlpacacornItemPackHolidaySpring.csproj.CoreCompileInputs.cache
+E:\Dropbox\Blender and Unreal\Unity\Eco\AlpacacornItemPack\CodeVS\HolidaySpring\AlpacacornItemPackHolidaySpring\obj\Debug\net8.0\AlpacacornItemPackHolidaySpring.sourcelink.json

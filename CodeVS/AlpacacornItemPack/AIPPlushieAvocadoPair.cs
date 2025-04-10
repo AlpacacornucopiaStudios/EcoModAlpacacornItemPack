@@ -1,4 +1,12 @@
-﻿namespace Eco.Mods.TechTree
+﻿using Eco.Core.Items;
+using Eco.Gameplay.Components;
+using Eco.Gameplay.Items.Recipes;
+using Eco.Gameplay.Skills;
+using Eco.Mods.TechTree;
+using Eco.Shared.Localization;
+using System.Runtime.Versioning;
+
+namespace Eco.Mods.TechTree
 {
     using System;
     using System.Collections.Generic;
@@ -108,56 +116,43 @@
         {
             ObjectName = typeof(AIPPlushieAvocadoPairObject).UILink(),
             Category = HousingConfig.GetRoomCategory("Decoration"),
-            BaseValue = 2,
+            BaseValue = 3,
             TypeForRoomLimit = Localizer.DoStr("Decoration"),
             DiminishingReturnMultiplier = 0.01f
         };
     }
 
+//Recipe////////////////////////////////////////////////////////////////
 
-    //Recipe////////////////////////////////////////////////////////////////
-
-    [RequiresSkill(typeof(TailoringSkill), 4)]
-    [Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Avocado Pair Item")]
-    [SupportedOSPlatform("windows7.0")]
-    public partial class AIPPlushieAvocadoPairRecipe : RecipeFamily
+[RequiresSkill(typeof(TailoringSkill), 2)]
+[Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Avocado Pair Item")]
+[SupportedOSPlatform("windows7.0")]
+public partial class AIPPlushieAvocadoPairRecipe : Recipe
+{
+    public AIPPlushieAvocadoPairRecipe()
     {
-        public AIPPlushieAvocadoPairRecipe()
-        {
-            var recipe = new Recipe();
-            recipe.Init(
-                name: "AIPPlushieAvocadoPair", //noloc
-                displayName: Localizer.DoStr("Plushie Avocado Pair"),
+        this.Init(
+            name: "AIPPlushieAvocadoPair", //noloc
+            displayName: Localizer.DoStr("Plushie Avocado Pair"),
 
-            ingredients: new List<IngredientElement>
-            {
+        ingredients: new List<IngredientElement>
+        {
                 new IngredientElement(typeof(AIPPlushieAvocadoHalf1Item), 1, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
                 new IngredientElement(typeof(AIPPlushieAvocadoHalf2Item), 1, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-               },
-            items: new List<CraftingElement>
-            {
+        },
+        items: new List<CraftingElement>
+        {
                 new CraftingElement<AIPPlushieAvocadoPairItem>(),
-            });
+        });
 
-            this.Recipes = new List<Recipe> { recipe };
-            this.ExperienceOnCraft = 3;
-            // Defines the amount of labor required and the required skill to add labor
-            this.LaborInCalories = CreateLaborInCaloriesValue(100, typeof(TailoringSkill));
-            // Defines our crafting time for the recipe
-            this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(TailoringSkill), start: 2f, skillType: typeof(TailoringSkill), typeof(TailoringFocusedSpeedTalent), typeof(TailoringParallelSpeedTalent));
+        this.ModsPreInitialize();
+        this.ModsPostInitialize();
+        CraftingComponent.AddTagProduct(tableType: typeof(TailoringTableObject), typeof(AIPPlushieAvocadoHalf1Recipe), this);
 
-
-            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Plushie Avocado Pair"
-            this.ModsPreInitialize();
-            this.Initialize(displayText: Localizer.DoStr("Plushie Avocado Pair"), recipeType: typeof(AIPPlushieAvocadoPairRecipe));
-            this.ModsPostInitialize();
-            // Register our RecipeFamily instance with the crafting system so it can be crafted.
-            CraftingComponent.AddRecipe(tableType: typeof(TailoringTableObject), recipeFamily: this);
-
-        }
-        /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
-        partial void ModsPreInitialize();
-        /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
-        partial void ModsPostInitialize();
-    };
+    }
+    /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
+    partial void ModsPreInitialize();
+    /// <summary>Hook for mods to customize RecipeFamily after initialization, but before registration. You can change skill requirements here.</summary>
+    partial void ModsPostInitialize();
+};
 };
