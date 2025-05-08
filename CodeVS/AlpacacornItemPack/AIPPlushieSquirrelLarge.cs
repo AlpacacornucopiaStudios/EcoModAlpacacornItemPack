@@ -50,20 +50,20 @@ using Eco.Simulation.WorldLayers;
 [RequireComponent(typeof(ForSaleComponent))]
 [RequireComponent(typeof(RoomRequirementsComponent))]
 [Tag("Usable")]
-[Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Dragon Item")]
+[Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Large Squirrel Item")]
 [SupportedOSPlatform("windows7.0")]
-public partial class AIPPlushieDragonObject : WorldObject, IRepresentsItem
+public partial class AIPPlushieSquirrelLargeObject : WorldObject, IRepresentsItem
 {
-public virtual Type RepresentedItemType => typeof(AIPPlushieDragonItem);
-public override LocString DisplayName => Localizer.DoStr("Plushie Dragon");
+public virtual Type RepresentedItemType => typeof(AIPPlushieSquirrelLargeItem);
+public override LocString DisplayName => Localizer.DoStr("Plushie Large Squirrel");
 public override TableTextureMode TableTexture => TableTextureMode.Stone;
 protected override void Initialize()
 {
 this.ModsPreInitialize();
-this.GetComponent<HousingComponent>().HomeValue = AIPPlushieDragonItem.homeValue;
+this.GetComponent<HousingComponent>().HomeValue = AIPPlushieSquirrelLargeItem.homeValue;
 this.ModsPostInitialize();
 }
-static AIPPlushieDragonObject()
+static AIPPlushieSquirrelLargeObject()
 {
 var occupancies = new List<BlockOccupancy>();
 //Vector3(x, y, z):  x is left/right, y is up/down, z is forward/backward
@@ -71,11 +71,11 @@ var occupancies = new List<BlockOccupancy>();
 // down    Shorthand for writing Vector3(0, -1, 0).
 // forward Shorthand for writing Vector3(0, 0, 1).
 // left    Shorthand for writing Vector3(-1, 0, 0).
-for (int x = 0; x <= 0; x++)
-for (int y = 0; y <= 0; y++)
-for (int z = 0; z <= 0; z++)
+for (int x = -1; x <= 1; x++)
+for (int y = 0; y <= 2; y++)
+for (int z = -1; z <= 1; z++)
 occupancies.Add(new BlockOccupancy(new Vector3i(x, y, z)));
-WorldObject.AddOccupancy<AIPPlushieDragonObject>(occupancies);
+WorldObject.AddOccupancy<AIPPlushieSquirrelLargeObject>(occupancies);
 }
 /// <summary>Hook for mods to customize WorldObject before initialization. You can change housing values here.</summary>
 partial void ModsPreInitialize();
@@ -85,61 +85,57 @@ partial void ModsPostInitialize();
 //Item////////////////////////////////////////////////////////////////
 [Serialized]
 [SupportedOSPlatform("windows7.0")]
-[LocDisplayName("Plushie Dragon")]
-[LocDescription("A huggable Plushie Dragon stuffed with cotton.")]
+[LocDisplayName("Plushie Large Squirrel")]
+[LocDescription("A huggable Large Plushie Squirrel stuffed with cotton. It is holding its favorite acorn. This is a 3x3x3 object.")]
 [Ecopedia("Housing Objects", "Decoration", createAsSubPage: true)]
 [Tag("Housing")]
 [Tag("Plushie")]
 [Weight(100)]
 [Tag(nameof(SurfaceTags.CanBeOnRug))]
-public partial class AIPPlushieDragonItem : WorldObjectItem<AIPPlushieDragonObject>
+public partial class AIPPlushieSquirrelLargeItem : WorldObjectItem<AIPPlushieSquirrelLargeObject>
 {
 protected override OccupancyContext GetOccupancyContext => new SideAttachedContext(DirectionAxisFlags.Down, WorldObject.GetOccupancyInfo(this.WorldObjectType));
 public override HomeFurnishingValue HomeValue => homeValue;
 public static readonly HomeFurnishingValue homeValue = new HomeFurnishingValue()
 {
-ObjectName = typeof(AIPPlushieDragonObject).UILink(),
+ObjectName = typeof(AIPPlushieSquirrelLargeObject).UILink(),
 Category = HousingConfig.GetRoomCategory("Decoration"),
-BaseValue = 2,
+BaseValue = 8,
 TypeForRoomLimit = Localizer.DoStr("Decoration"),
 DiminishingReturnMultiplier = 0.01f
 };
 }
 //Recipe////////////////////////////////////////////////////////////////
-[RequiresSkill(typeof(TailoringSkill), 5)]
-[Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Dragon Item")]
+[RequiresSkill(typeof(TailoringSkill), 7)]
+[Ecopedia("Housing Objects", "Decoration", subPageName: "Plushie Large Squirrel Item")]
 [SupportedOSPlatform("windows7.0")]
-public partial class AIPPlushieDragonRecipe : RecipeFamily
+public partial class AIPPlushieSquirrelLargeRecipe : RecipeFamily
 {
-public AIPPlushieDragonRecipe()
+public AIPPlushieSquirrelLargeRecipe()
 {
 var recipe = new Recipe();
 recipe.Init(
-name: "AIPPlushieDragon", //noloc
-displayName: Localizer.DoStr("Plushie Dragon"),
+name: "AIPPlushieSquirrelLarge", //noloc
+displayName: Localizer.DoStr("Plushie Large Squirrel"),
 ingredients: new List<IngredientElement>
 {
-            new IngredientElement(typeof(CottonFabricItem), 4, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-            new IngredientElement(typeof(CottonLintItem), 20, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-            new IngredientElement(typeof(CottonThreadItem), 4, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-            new IngredientElement(typeof(CopperHydroxideItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-            new IngredientElement(typeof(WhitePowderItem), 5, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-            new IngredientElement(typeof(MagentaPowderItem), 45, typeof(TailoringSkill), typeof(TailoringLavishResourcesTalent)),
-            new IngredientElement(typeof(AIPLimestoneEyeBeadItem), 2, true),
+            new IngredientElement(typeof(AIPGlassEyeBeadItem), 2, true),
+            new IngredientElement(typeof(AIPPlushieSquirrelBabyItem), 30, true),
+            new IngredientElement(typeof( AcornItem), 30, true),
 },
-items: new List<CraftingElement>{new CraftingElement<AIPPlushieDragonItem>(),});
+items: new List<CraftingElement>{new CraftingElement<AIPPlushieSquirrelLargeItem>(),});
 this.Recipes = new List<Recipe> { recipe };
-this.ExperienceOnCraft = 3;
+this.ExperienceOnCraft = 6;
 // Defines the amount of labor required and the required skill to add labor
-this.LaborInCalories = CreateLaborInCaloriesValue(100, typeof(TailoringSkill));
+this.LaborInCalories = CreateLaborInCaloriesValue(900, typeof(TailoringSkill));
 // Defines our crafting time for the recipe
-this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(TailoringSkill), start: 2f, skillType: typeof(TailoringSkill), typeof(TailoringFocusedSpeedTalent), typeof(TailoringParallelSpeedTalent));
-// Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Plushie Dragon"
+this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(TailoringSkill), start: 10f, skillType: typeof(TailoringSkill), typeof(TailoringFocusedSpeedTalent), typeof(TailoringParallelSpeedTalent));
+// Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Plushie Large Squirrel"
 this.ModsPreInitialize();
-this.Initialize(displayText: Localizer.DoStr("Plushie Dragon"), recipeType: typeof(AIPPlushieDragonRecipe));
+this.Initialize(displayText: Localizer.DoStr("Plushie Large Squirrel"), recipeType: typeof(AIPPlushieSquirrelLargeRecipe));
 this.ModsPostInitialize();
 // Register our RecipeFamily instance with the crafting system so it can be crafted.
-CraftingComponent.AddRecipe(tableType: typeof(TailoringTableObject), recipeFamily: this);
+CraftingComponent.AddRecipe(tableType: typeof(AdvancedTailoringTableObject), recipeFamily: this);
 }
 /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
 partial void ModsPreInitialize();
