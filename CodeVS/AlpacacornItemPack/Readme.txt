@@ -11,6 +11,14 @@ No AI was used in the creation of this item pack.
 Attributions:
 	Mesh: "3D Origami crane" (https://skfb.ly/m5lih20ba) by JuanG3D is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). Crane texture has been changed.
 
+Update 2.1 2025, May 8
+	Renamed all classes to have the AIP prefix (warning this will delete any objects and items from this pack already crafted in a world if updating from a previous version)
+	Rebalanced plushies further
+		Swapped out black powder and replaced with charcoal powder
+		Changed decoration bonuses
+		Slight rebalancing of colored powders.
+	
+
 Update 2.0 2025, April 8
 	Significantly rebalanced all plushies:
 		Added new Glass Eye Bead and Limestone Eye Bead item recipes crafted by Glassworkers & Masons respectively
